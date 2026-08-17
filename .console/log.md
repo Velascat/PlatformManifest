@@ -1,3 +1,19 @@
+## 2026-08-17 — docs(links): fix systematic off-by-one in cross-repo references
+
+Found by an ecosystem-wide documentation link sweep run from OperationsCenter.
+
+`docs/verification/verification_summary.md` reached sibling repos with
+`../../../../OperationsCenter/...`. From `docs/verification/` that is four levels
+up — `~/` — not the workspace root. The correct depth is three. All six
+OperationsCenter references were wrong; only one was a `.md` target, so a
+markdown-only link check surfaces just that one and the other five (`.py`, test
+files) stay silently broken. Verified each of the six resolves at depth 3 before
+changing it.
+
+The nine `managed private project/` references were deliberately left alone: they
+resolve at NO depth because that repo is private and not checked out here. That is
+an intentional dangling reference, not the same bug.
+
 # Log
 
 ## 2026-07-17 — D3 P5 resolved as spec-deferred (CL #49); D3 build arc complete

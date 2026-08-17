@@ -76,10 +76,10 @@ The system now distinguishes:
 ### `PASS` — OperationsCenter consumes the private layer cleanly
 
 Evidence:
-- [settings.py](../../../../OperationsCenter/src/operations_center/config/settings.py)
-- [repo_graph_factory.py](../../../../OperationsCenter/src/operations_center/repo_graph_factory.py)
-- [graph_doctor main](../../../../OperationsCenter/src/operations_center/entrypoints/graph_doctor/main.py)
-- [test_repo_graph_factory_from_settings.py](../../../../OperationsCenter/tests/unit/test_repo_graph_factory_from_settings.py)
+- [settings.py](../../../OperationsCenter/src/operations_center/config/settings.py)
+- [repo_graph_factory.py](../../../OperationsCenter/src/operations_center/repo_graph_factory.py)
+- [graph_doctor main](../../../OperationsCenter/src/operations_center/entrypoints/graph_doctor/main.py)
+- [test_repo_graph_factory_from_settings.py](../../../OperationsCenter/tests/unit/test_repo_graph_factory_from_settings.py)
 
 OperationsCenter now supports `platform -> private -> (project xor work_scope)
 -> local` composition, including explicit `private_manifest_path` and
@@ -89,8 +89,8 @@ of PlatformManifest-owned semantics.
 ### `PASS` — canonical wire ownership remains in CxRP
 
 Evidence:
-- [OperationsCenter contract map](../../../../OperationsCenter/docs/architecture/contracts/contract-map.md)
-- [OperationsCenter contract ownership tests](../../../../OperationsCenter/tests/unit/contracts/test_contract_ownership.py)
+- [OperationsCenter contract map](../../../OperationsCenter/docs/architecture/contracts/contract-map.md)
+- [OperationsCenter contract ownership tests](../../../OperationsCenter/tests/unit/contracts/test_contract_ownership.py)
 
 CxRP owns canonical cross-repo proposal, routing, and execution semantics.
 OperationsCenter keeps stricter internal `OcPlanningProposal`,
